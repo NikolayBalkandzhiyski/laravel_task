@@ -27,7 +27,9 @@ Route::post('register', 'RegisterController@register');
 
 Route::group(['middleware' => ['front']], function () {
 
-    Route::get('admin/dashboard', '\Backpack\Base\app\Http\Controllers\AdminController@dashboard')->middleware('front');
+    Route::get('admin/dashboard', '\Backpack\Base\app\Http\Controllers\AdminController@dashboard');
 
-    Route::post('admin/login', '\Backpack\Base\app\Http\Controllers\Auth\LoginController@login')->middleware('front');
+    Route::post('admin/login', '\Backpack\Base\app\Http\Controllers\Auth\LoginController@login');
+
+    CRUD::resource('admin/article', 'Admin\ArticleCrudController');
 });
