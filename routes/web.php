@@ -21,17 +21,13 @@ Route::get('/home', function () {
 
 Route::get('login', 'LoginController@index');
 
-Route::group(['middleware' => ['front']], function () {
-
-    Route::get('admin/login', '\Backpack\Base\app\Http\Controllers\Auth\LoginController@showLoginForm')->middleware('front');
-
-    Route::get('admin/dashboard', '\Backpack\Base\app\Http\Controllers\Auth\LoginController@dashboard')->middleware('front');
-
-
-    Route::post('admin/login', '\Backpack\Base\app\Http\Controllers\Auth\LoginController@login')->middleware('front');
-});
-
-
 Route::get('register', 'RegisterController@index');
 
 Route::post('register', 'RegisterController@register');
+
+Route::group(['middleware' => ['front']], function () {
+
+    Route::get('admin/dashboard', '\Backpack\Base\app\Http\Controllers\AdminController@dashboard')->middleware('front');
+
+    Route::post('admin/login', '\Backpack\Base\app\Http\Controllers\Auth\LoginController@login')->middleware('front');
+});

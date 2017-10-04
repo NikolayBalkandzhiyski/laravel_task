@@ -19,8 +19,15 @@ class RedirectIfAuthenticatedFront
     {
         $response = $next($request); //please see what is going on here.
 
-        if ($request->user() && $request->user()->role == 0) {
-            return redirect('/home');
+        $user = $request->user();
+
+        if($user){
+            if ($user->role == 0) {
+                return redirect('/home');
+            }
+            else{
+                return $response;
+            }
         }
 
         return $response;
