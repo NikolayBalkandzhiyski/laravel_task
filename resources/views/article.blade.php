@@ -8,8 +8,11 @@
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
                     <h4 class="text-left">{{ $article->name }}</h4>
                 </div>
-                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4">
                     <h4 class="text-right">Date: {{ $article->created_at }}</h4>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-2">
+                    <h4 class="text-right">Date: {{ $article->adminName}}</h4>
                 </div>
             </div>
         </div>

@@ -64,8 +64,8 @@
 
         .content {
             text-align: center;
-            border-left: 4px solid #dadada;
-            border-right: 4px solid #dadada;
+            border-left: 1px solid #dadada;
+            border-right: 1px solid #dadada;
             min-height: 100vh !important;
         }
 
