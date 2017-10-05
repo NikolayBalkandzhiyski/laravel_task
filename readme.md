@@ -1,3 +1,9 @@
+Instalation: 
+1. composer install
+2. php artisan key:generate
+3. create .env file
+4. php artisan migrate
+
 <p align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg"></p>
 
 <p align="center">
