@@ -25,6 +25,10 @@ Route::get('register', 'RegisterController@index');
 
 Route::post('register', 'RegisterController@register');
 
+Route::get('articles', 'ArticlesController@articles');
+
+Route::get('article/{id}', 'ArticlesController@article');
+
 Route::group(['middleware' => ['front']], function () {
 
     Route::get('admin/dashboard', '\Backpack\Base\app\Http\Controllers\AdminController@dashboard');

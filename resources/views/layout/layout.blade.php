@@ -43,7 +43,7 @@
         }
 
         .full-height {
-            height: 10vh;
+            height: 10vh !important;
         }
 
         .flex-center {
@@ -64,6 +64,9 @@
 
         .content {
             text-align: center;
+            border-left: 4px solid #dadada;
+            border-right: 4px solid #dadada;
+            min-height: 100vh !important;
         }
 
         .title {
@@ -83,6 +86,9 @@
         .m-b-md {
             margin-bottom: 30px;
         }
+        .top-right{
+            top:0;
+        }
     </style>
     <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
@@ -90,18 +96,24 @@
 <body>
 <div class="flex-center position-ref full-height">
 
-        <div class="top-right links">
-            @if (Auth::check())
-                <a href="{{ url('/home') }}">Home</a>
-                <a href="{{ url(config('backpack.base.route_prefix', 'admin').'/logout') }}"><i class="fa fa-btn fa-sign-out"></i> {{ trans('backpack::base.logout') }}</a>
-            @else
-                <a href="{{ url('/login') }}">Login</a>
-                <a href="{{ url('/register') }}">Register</a>
-            @endif
+    @if (Auth::check())
+        <div class="top-left links">
+            <a href="{{ url('/home') }}">Home</a>
+            <a href="{{ url('/articles') }}">Articles</a>
         </div>
+        <div class="top-right links">
+            <a href="{{ url(config('backpack.base.route_prefix', 'admin').'/logout') }}"><i
+                        class="fa fa-btn fa-sign-out"></i> {{ trans('backpack::base.logout') }}</a>
+        </div>
+    @else
+        <div class="top-right links">
+            <a href="{{ url('/login') }}">Login</a>
+            <a href="{{ url('/register') }}">Register</a>
+        </div>
+    @endif
 
 </div>
-<div class="content">
+<div class="content container">
     @yield('content')
 </div>
 <!-- jQuery 2.2.0 -->
