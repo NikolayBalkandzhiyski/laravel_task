@@ -24,8 +24,9 @@ class ArticleRequest extends \Backpack\CRUD\app\Http\Requests\CrudRequest
      */
     public function rules()
     {
+
         return [
-             'name' => 'required|unique:articles|min:5|max:100',
+             'name' => 'required|min:5|max:100|unique:articles,name,'.$this->id,
              'body'  => 'required|min:10'
         ];
     }

@@ -29,6 +29,6 @@ class RedirectIfAuthenticatedFront
             }
         }
 
-        return redirect('/');
+        return $response;
     }
 }

@@ -102,6 +102,7 @@
             <a href="{{ url('/articles') }}">Articles</a>
         </div>
         <div class="top-right links">
+            <span>Welcome <b>{{ Auth::user()->name }}</b></span>
             <a href="{{ url(config('backpack.base.route_prefix', 'admin').'/logout') }}"><i
                         class="fa fa-btn fa-sign-out"></i> {{ trans('backpack::base.logout') }}</a>
         </div>
